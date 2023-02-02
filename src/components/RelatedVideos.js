@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import { useYoutubeApi } from "../context/YoutubeApiContext";
 import VideoCard from "./VideoCard";
+import { PacmanLoader } from "react-spinners";
 
 const RelatedVideos = ({ id }) => {
   const { youtube } = useYoutubeApi();
@@ -15,7 +16,7 @@ const RelatedVideos = ({ id }) => {
 
   return (
     <>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <PacmanLoader color="#36d7b7" size={50} />}
       {error && <p>Something is wrong 😒</p>}
       {videos && (
         <ul>
